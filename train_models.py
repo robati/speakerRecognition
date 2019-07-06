@@ -1,6 +1,6 @@
 #train_models.py
-
 import cPickle
+#import pickle
 #import sklearn.mixture
 import numpy as np
 from scipy.io.wavfile import read
@@ -27,7 +27,7 @@ count = 1
 features = np.asarray(())
 for path in file_paths:    
     path = path.strip()   
-    print path
+#    print path
     
     # read the audio
     sr,audio = read(source + path)
@@ -47,7 +47,7 @@ for path in file_paths:
         # dumping the trained gaussian model
         picklefile = path.split("-")[0]+".gmm"
         cPickle.dump(gmm,open(dest + picklefile,'w'))
-        print '+ modeling completed for speaker:',picklefile," with data point = ",features.shape    
+        print '+ modeling completed for speaker:',picklefile," with data point = ",features.shape
         features = np.asarray(())
         count = 0
     count = count + 1
