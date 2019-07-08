@@ -11,16 +11,25 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Recognizer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(49, 190, 170)</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>60</y>
+     <y>58</y>
      <width>51</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(210, 210, 210);</string>
    </property>
    <property name="text">
     <string>browse</string>
@@ -48,14 +57,17 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>110</y>
+     <x>50</x>
+     <y>140</y>
      <width>51</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(210, 210, 210);</string>
+   </property>
    <property name="text">
-    <string>Submit</string>
+    <string>detect</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -69,6 +81,61 @@
    </property>
    <property name="text">
     <string>select an audio file</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>110</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>find Speaker</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>200</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>verify Speaker</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>225</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(210, 210, 210);</string>
+   </property>
+   <property name="text">
+    <string>Submit</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>230</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
  </widget>

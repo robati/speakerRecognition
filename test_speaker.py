@@ -61,7 +61,7 @@ def findSpeacker(path):
         log_likelihood[i] = scores.sum()
 
     winner = np.argmax(log_likelihood)
-    return "\tdetected as - "+ speakers[winner]
+    return speakers[winner]
 
 
 
@@ -70,10 +70,13 @@ class MyWindow(QtGui.QMainWindow):
         super(MyWindow, self).__init__()
         uic.loadUi('test1.ui', self)
         self.pushButton.clicked.connect(self.browseFile)
-        self.pushButton_2.clicked.connect(self.submit)
+        self.pushButton_2.clicked.connect(self.detect)
+        self.pushButton_3.clicked.connect(self.submit)
         self.msg = QMessageBox()
         self.show()
         self.file = ""
+        for i in range(len(speakers)):
+            self.comboBox.addItem(speakers[i])
 
 
     def browseFile(self):
@@ -83,9 +86,17 @@ class MyWindow(QtGui.QMainWindow):
         self.Filelabel.setText("~"+self.file)
 
 
+    def detect(self):
+        speaker = findSpeacker(self.file)
+        self.msg.setText("\tdetected as - "+speaker)
+        self.msg.exec_()
+
     def submit(self):
-        a = findSpeacker(self.file)
-        self.msg.setText(a)
+        selected_speaker = self.comboBox.currentText()
+        speaker = findSpeacker(self.file)
+        print "!"+speaker+"! and-!" + selected_speaker+"!"
+        verified = (str(selected_speaker) == str(speaker))
+        self.msg.setText( str(verified))
         self.msg.exec_()
 
     def getFileName(self,path):
