@@ -88,13 +88,14 @@ class MyWindow(QtGui.QMainWindow):
 
     def detect(self):
         speaker = findSpeacker(self.file)
-        self.msg.setText("\tdetected as - "+speaker)
+        #self.msg.setText("detected as - "+speaker)
+        self.msg.setText(speaker)
         self.msg.exec_()
 
     def submit(self):
         selected_speaker = self.comboBox.currentText()
         speaker = findSpeacker(self.file)
-        print "!"+speaker+"! and-!" + selected_speaker+"!"
+        print ("!"+speaker+"! and-!" + selected_speaker+"!")
         verified = (str(selected_speaker) == str(speaker))
         self.msg.setText( str(verified))
         self.msg.exec_()

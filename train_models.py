@@ -34,7 +34,7 @@ for path in file_paths:
     
     # extract 40 dimensional MFCC & delta MFCC features
     vector   = extract_features(audio,sr)
-    
+    #print (vector.shape)
     if features.size == 0:
         features = vector
     else:
